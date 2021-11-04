@@ -1,10 +1,10 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\StudentRep;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class StudentFactory extends Factory
+class StudentRepFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,10 +15,7 @@ class StudentFactory extends Factory
     {
         return [
             'name' => $this->faker->firstName(),
-            'year_group' => $this->faker->unique()->numberBetween(0,4),
-            'student_number' => $this->faker->unique(true)->numberBetween(1,10000),
             'email' => $this->faker->unique(true)->safeEmail(),
-            'student_rep_id' => $this->faker->unique()->numberBetween(1,5),
         ];
     }
 }

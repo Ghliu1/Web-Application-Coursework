@@ -13,8 +13,10 @@ class CreateStudentRepsTable extends Migration
      */
     public function up()
     {
-        Schema::create('student__reps', function (Blueprint $table) {
+        Schema::create('student_reps', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateStudentRepsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student__reps');
+        Schema::dropIfExists('student_reps');
     }
 }
