@@ -13,6 +13,6 @@ class StudentRepTableSeeder extends Seeder
      */
     public function run()
     {
-        $studentreps = Studentrep::factory()->count(5)->create();
+        $studentReps = Studentrep::factory()->count(5)->create();
     }
 }
