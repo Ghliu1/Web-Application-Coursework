@@ -1,10 +1,10 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\StudentRep;
+use App\Models\Post;
 use Illuminate\Database\Seeder;
 
-class StudentRepTableSeeder extends Seeder
+class PostTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class StudentRepTableSeeder extends Seeder
      */
     public function run()
     {
-        $studentReps = Studentrep::factory()->count(5)->create();
+        $posts = Post::factory()->count(12)->create();
     }
 }
