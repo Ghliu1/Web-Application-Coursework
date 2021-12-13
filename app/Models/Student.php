@@ -9,8 +9,8 @@ class Student extends Model
 {
     use HasFactory;
 
-    public function student_reps()
+    public function posts()
     {
-        return $this->belongsTo(StudentRep::class);
+        return $this->hasMany(Post::class);
     }
 }
