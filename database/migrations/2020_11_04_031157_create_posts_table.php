@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentRepsTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateStudentRepsTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_reps', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
+            $table->string('title');
+            $table->string('text');
+            $table->bigInteger('student_id')->unsigned()->nullable();
+            $table->foreign('student_id')->references('id')->on('students')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateStudentRepsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_reps');
+        Schema::dropIfExists('posts');
     }
 }
